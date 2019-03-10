@@ -1,0 +1,32 @@
+
+import discord
+
+TOKEN = 'NTUzNjkxOTAyMjAxODIzMjY4.D2XXxA.rVn-4dqHF3h8K19vUvC6C7UgFZc'
+
+client = discord.Client()
+
+        
+        
+        
+@client.event
+async def on_message(message):
+    
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('labas'):
+        msg = 'labas {0.author.mention}'.format(message)
+        await client.send_message(message.channel, msg)
+        
+     
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
+    
+ 
+
+client.run('NTUzNjkxOTAyMjAxODIzMjY4.D2XXxA.rVn-4dqHF3h8K19vUvC6C7UgFZc')
